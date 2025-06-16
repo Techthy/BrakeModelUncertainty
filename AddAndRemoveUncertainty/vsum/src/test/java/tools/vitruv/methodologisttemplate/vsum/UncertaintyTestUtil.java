@@ -100,7 +100,7 @@ public class UncertaintyTestUtil {
 
 	public static void addBrakeDiscWithDiameter(VirtualModel vsum, Path projectPath, int diameter) {
 		CommittableView view = getDefaultView(vsum, List.of(Brakesystem.class))
-				.withChangeDerivingTrait();
+				.withChangeRecordingTrait();
 		modifyView(view, (CommittableView v) -> {
 			var brakeDisc = BrakesystemFactory.eINSTANCE.createBrakeDisk();
 			brakeDisc.setDiameterInMM(diameter);
